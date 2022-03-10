@@ -1,5 +1,5 @@
 # blackbull
-This is a MD5 hash bruteforcer
+This is a MD5 hash bruteforcer / Esse é um programa de força bruta para quebrar hash MD5
 
 
 
