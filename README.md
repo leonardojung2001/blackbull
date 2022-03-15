@@ -5,7 +5,7 @@ This is a MD5 hash bruteforcer / Esse é um programa de força bruta para quebra
 
 # Usage / Uso
 
-python3 blackbull 020e60c6a84db8c5d4c2d56a4e4fe082 rockyou.txt
+python3 blackbull.py 020e60c6a84db8c5d4c2d56a4e4fe082 rockyou.txt
 
 =====> Remember to use a valid wordlist! / Lembre-se de usar uma wordlist válida!
 
