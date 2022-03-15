@@ -9,7 +9,7 @@ for key in arquivo:
 	
 	encrypted_word = hashlib.md5(key.encode()) #encode the word in the wordlist
 
-	if encrypted_word.hexdigest() == sys.argv[1]: #check if the generated encrypter word is the same of the given hash 
+	if encrypted_word.hexdigest() == sys.argv[1]: #check if the generated encrypted word is the same of the given hash 
 		print("The hash " + str(encrypted_word.hexdigest()) + " has de key: " + key)
 		exit()
 	else:
