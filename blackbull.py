@@ -2,14 +2,14 @@ import hashlib
 import sys
 
 
-arquivo = open(sys.argv[2],"r")
+arquivo = open(sys.argv[2],"r") #third parameter is the path of the wordlist 
 
 for key in arquivo:
-	key = key.strip()
+	key = key.strip() #remove all the garbage in string, such as "\n"
 	
-	encrypted_word = hashlib.md5(key.encode())
+	encrypted_word = hashlib.md5(key.encode()) #encode the word in the wordlist
 
-	if encrypted_word.hexdigest() == sys.argv[1]:
+	if encrypted_word.hexdigest() == sys.argv[1]: #check if the generated encrypter word is the same of the given hash 
 		print("The hash " + str(encrypted_word.hexdigest()) + " has de key: " + key)
 		exit()
 	else:
