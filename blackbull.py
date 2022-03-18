@@ -20,7 +20,8 @@ print("Key not found!")
 
 
 
-
+#file not found error
+#unsuported hash type
 
 
 
