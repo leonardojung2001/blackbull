@@ -37,4 +37,7 @@ def breakit(arquivo):
 if __name__ == "__main__":
 	initial()
 
+#UnicodeDecodeError: 'utf-8' codec can't decode byte 0xf1 in position 923: invalid continuation byte
+
+
 
