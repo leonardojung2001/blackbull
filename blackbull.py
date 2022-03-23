@@ -1,27 +1,40 @@
-import hashlib
+import hashlib 
 import sys
 
 
-arquivo = open(sys.argv[2],"r") #third parameter is the path of the wordlist 
+def initial():
+	try: ##trying to open the file!
+		arquivo = open(sys.argv[2],"r")
 
-for key in arquivo:
-	key = key.strip() #remove all the garbage in string, such as "\n"
-	
-	encrypted_word = hashlib.md5(key.encode()) #encode the word in the wordlist
-
-	if encrypted_word.hexdigest() == sys.argv[1]: #check if the generated encrypted word is the same of the given hash 
-		print("The hash " + str(encrypted_word.hexdigest()) + " has de key: " + key)
+	except FileNotFoundError:
+		print("The requsted wordlist was not found!")
 		exit()
-	else:
-		print(encrypted_word.hexdigest() + " / " + key)
+
+	breakit(arquivo)
+
+
+	
+def breakit(arquivo):	
+	
+	for key in arquivo: ## if the wordlist exist then clean them
+		key = key.strip()
+	
+		encrypted_word = hashlib.md5(key.encode())
 		
-print("Key not found!")
+		if encrypted_word.hexdigest() == sys.argv[1]:
+			print("The hash " + str(encrypted_word.hexdigest()) + " has the key " + key)
+			exit()
+			
+		else:
+			print(encrypted_word.hexdigest() + " / " + key)
+	
+		
+	print("Key not found, or the provided hash is not MD5 readable")
 
 
 
 
-#file not found error
-#unsuported hash type
-
+if __name__ == "__main__":
+	initial()
 
 
